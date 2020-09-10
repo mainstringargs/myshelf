@@ -9,7 +9,7 @@
 
 <div class="shelf read">
   <ul class="books clearfix">
-    {% for item in (site.bookshelf-data._data.bookshelf-read reversed) %}
+    {% for item in (site.bookshelf-db.bookshelf-read reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img class="front" src="/bookshelf-data/_img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="read_{{ item.title | replace: ' ','_' }}">
@@ -44,7 +44,7 @@
 </div>
 <div class="shelf reading">
   <ul class="books clearfix">
-    {% for item in (site.bookshelf-data._data.bookshelf-reading reversed) %}
+    {% for item in (site.bookshelf-db.bookshelf-reading reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img class="front" src="/bookshelf-data/_img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="reading_{{ item.title | replace: ' ','_' }}">
@@ -80,7 +80,7 @@
 
 <div class="shelf ondeck">
   <ul class="books clearfix">
-    {% for item in (site.bookshelf-data._data.bookshelf-ondeck reversed) %}
+    {% for item in (site.bookshelf-db.bookshelf-ondeck reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img class="front" src="/bookshelf-data/_img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="ondeck_{{ item.title | replace: ' ','_' }}">

@@ -1,0 +1,3 @@
+[submodule "bookshelf-data"]
+	path = bookshelf-data
+	url = https://github.com/mainstringargs/bookshelf-data.git

@@ -11,7 +11,7 @@
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-read reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img class="front" src="{{ site.baseurl }}/_data/img/{{ item.image }}" alt="{{ item.title }}">
+      <img class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="read_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
@@ -46,7 +46,7 @@
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-reading reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img class="front" src="{{ site.baseurl }}/_data/img/{{ item.image }}" alt="{{ item.title }}">
+      <img class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="reading_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
@@ -82,7 +82,7 @@
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-ondeck reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img class="front" src="{{ site.baseurl }}/_data/img/{{ item.image }}" alt="{{ item.title }}">
+      <img class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="ondeck_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>

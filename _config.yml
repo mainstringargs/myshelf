@@ -4,6 +4,7 @@ description: My Shelf
 baseurl: /myshelf # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
+baseBookshelfUrl: /bookshelf-data
 
 #gplus_username:  lorem_ipsum
 

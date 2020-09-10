@@ -7,7 +7,6 @@ baseurl: /myshelf # the subpath of your site, e.g. /blog
 baseBookshelfUrl: /bookshelf-data
 
 #gplus_username:  lorem_ipsum
-
 # Google-analytics
 google-analytics:
   id: "UA-1749812-7"

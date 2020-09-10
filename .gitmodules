@@ -1,3 +1,6 @@
 [submodule "bookshelf-data"]
 	path = _data
 	url = https://github.com/mainstringargs/bookshelf-data.git
+[submodule "_data"]
+	path = _data
+	url = https://github.com/mainstringargs/bookshelf-data.git

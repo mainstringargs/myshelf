@@ -26,7 +26,7 @@ jobs:
           git config pull.rebase false
           git checkout master
           git submodule update --init --recursive
-          git pull --recurse-submodules
+          git submodule update --remote --merge
           git add _data
           git status
           git commit -m "updating _data"

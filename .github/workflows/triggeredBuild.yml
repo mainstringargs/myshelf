@@ -24,6 +24,7 @@ jobs:
           git config --global user.email "abcd@efgh.com"
           git config --global user.name "Main String[] args"
           git config pull.rebase false
+          git checkout master
           git pull --recurse-submodules
           git add _data
           git commit _data -m "updating _data"

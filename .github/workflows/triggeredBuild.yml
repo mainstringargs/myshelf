@@ -28,5 +28,7 @@ jobs:
           git submodule update --init --recursive
           git pull --recurse-submodules
           git add _data
-          git commit _data -m "updating _data"
+          git status
+          git commit -m "updating _data"
+          git status
           git push

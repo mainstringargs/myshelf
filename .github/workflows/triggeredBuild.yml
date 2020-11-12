@@ -25,6 +25,7 @@ jobs:
           git config --global user.name "Main String[] args"
           git config pull.rebase false
           git checkout master
+          git pull
           git submodule update --init --recursive
           git submodule update --remote --merge
           git add _data

@@ -18,14 +18,14 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   console.log(data);
-  var parent = document.getElementById(data.replaceAll('img_','')).parentNode
-  console.log(JSON.stringify(parent));
+  var parent = document.getElementById(data).parentNode
+  ev.target.appendChild(document.getElementById(data));
 }
   
 </script>
 
-<div ondrop="drop(event)" ondragover="allowDrop(event)" class="shelf read">
-  <ul class="books clearfix">
+<div  class="shelf read">
+  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-read reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
@@ -59,8 +59,8 @@ function drop(ev) {
     {% endfor %}
   </ul>
 </div>
-<div ondrop="drop(event)" ondragover="allowDrop(event)" class="shelf reading">
-  <ul class="books clearfix">
+<div class="shelf reading">
+  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-reading reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)" class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
@@ -95,8 +95,8 @@ function drop(ev) {
   </ul>
 </div>
 
-<div ondrop="drop(event)" ondragover="allowDrop(event)" class="shelf ondeck">
-  <ul class="books clearfix">
+<div class="shelf ondeck">
+  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-ondeck reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">

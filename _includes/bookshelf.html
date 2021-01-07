@@ -49,16 +49,7 @@
       <img class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="reading_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
-          <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
-          <script>
-            var span = document.getElementById("rating_{{ item.title | replace: ' ','_' }}");
-            var rating = {{ item.amazon-rating }};
-            var starWidth = (span.offsetWidth - paddingLeft - (5*gapSize))/5.0;
-            var gaps = Math.floor(rating);
-            var width = (rating * starWidth) + (gaps * gapSize);
-            span.style.width = `${width}px`;
-            span.title={{ item.amazon-rating }} +" out of 5";
-          </script>
+
           <dl class="p10">
             <dt>Title:</dt>
             <dd>{{ item.title }}</dd>
@@ -71,6 +62,16 @@
             {{ item.description  | truncatewords: 20}}
           </p>
           <a href="{{item.link}}" target="_blank">Amazon Link</a>
+          <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
+          <script>
+            var span = document.getElementById("rating_{{ item.title | replace: ' ','_' }}");
+            var rating = {{ item.amazon-rating }};
+            var starWidth = (span.offsetWidth - paddingLeft - (5*gapSize))/5.0;
+            var gaps = Math.floor(rating);
+            var width = (rating * starWidth) + (gaps * gapSize);
+            span.style.width = `${width}px`;
+            span.title={{ item.amazon-rating }} +" out of 5";
+          </script>
         </div>
       </div>
     </li>

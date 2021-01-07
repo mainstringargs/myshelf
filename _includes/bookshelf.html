@@ -18,7 +18,9 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   console.log(data);
-  var parent = document.getElementById(data).parentNode
+  console.log(document.getElementById(data));
+  console.log(document.getElementById(data).parentNode);
+  //var parent = document.getElementById(data).parentNode
   ev.target.appendChild(document.getElementById(data));
 }
   

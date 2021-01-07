@@ -26,8 +26,8 @@ function drop(ev) {
   
 </script>
 
-<div  class="shelf read">
-  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
+<div ondrop="drop(event)" ondragover="allowDrop(event)"  class="shelf read">
+  <ul  class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-read reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
@@ -61,8 +61,8 @@ function drop(ev) {
     {% endfor %}
   </ul>
 </div>
-<div class="shelf reading">
-  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
+<div class="shelf reading" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-reading reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)" class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
@@ -97,8 +97,8 @@ function drop(ev) {
   </ul>
 </div>
 
-<div class="shelf ondeck">
-  <ul ondrop="drop(event)" ondragover="allowDrop(event)" class="books clearfix">
+<div class="shelf ondeck" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-ondeck reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
       <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">

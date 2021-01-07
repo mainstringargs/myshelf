@@ -17,7 +17,8 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  var parent = document.getElementById(data).parentNode
+  console.log(data);
+  var parent = document.getElementById(data.replaceAll('img_','')).parentNode
   console.log(JSON.stringify(parent));
 }
   
@@ -27,7 +28,7 @@ function drop(ev) {
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-read reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
+      <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="read_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
@@ -62,7 +63,7 @@ function drop(ev) {
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-reading reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img draggable="true" ondragstart="drag(event)" class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
+      <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)" class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="reading_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>
@@ -98,7 +99,7 @@ function drop(ev) {
   <ul class="books clearfix">
     {% for item in (site.data.yaml.bookshelf-ondeck reversed) %}
     <li id="{{ item.title | replace: ' ','_' }}" class="book">
-      <img draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
+      <img id="img_{{ item.title | replace: ' ','_' }}" draggable="true" ondragstart="drag(event)"  class="front" src="{{ site.baseBookshelfUrl }}/assets/img/{{ item.image }}" alt="{{ item.title }}">
       <div class="back" onclick="" id="ondeck_{{ item.title | replace: ' ','_' }}">
         <div class="p0">
           <span class="score"><span id="rating_{{ item.title | replace: ' ','_' }}"></span></span>

@@ -11,15 +11,16 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-  ev.dataTransfer.setData("text", JSON.stringify(ev, null, 4));
+  ev.dataTransfer.setData("text", ev.target.id);
 }
 
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  //ev.target.appendChild(document.getElementById(data));
-  console.log(data);
+  var parent = document.getElementById(data).parentNode
+  console.log(JSON.stringify(parent));
 }
+  
 </script>
 
 <div ondrop="drop(event)" ondragover="allowDrop(event)" class="shelf read">
